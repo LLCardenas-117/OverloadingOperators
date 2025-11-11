@@ -194,5 +194,20 @@ namespace OverloadingOperatorsLib
             Numerator = (WholeNumber * Denominator) + Numerator;
             WholeNumber = 0;
         }
+
+        public override string ToString()
+        {
+            if (WholeNumber == 0) {
+                return $"{Numerator}/{Denominator}";
+            }
+            else if (Numerator == 0)
+            {
+                return $"{WholeNumber}";
+            }
+            else
+            {
+                return $"{WholeNumber} {Numerator}/{Denominator}";
+            }
+        }
     }
 }
