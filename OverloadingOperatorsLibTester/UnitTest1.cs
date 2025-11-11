@@ -106,9 +106,24 @@ namespace OverloadingOperatorsLibTester
         }
 
         [Theory]
-        [InlineData(0, 1, 2, 0, 1, 4, 0, 1, 8)]
-        //[InlineData(0, 1, 2, 0, 1, 4, 0, 1, 2)]
+        [InlineData(0, 1, 2,  0, 1, 4,  0, 1, 8)]
+        [InlineData(0, 2, 6,  0, 5, 20,  0, 1, 12)]
         public void Fraction_ReturnCorrectMultiplicationValue(int w1, int n1, int d1, int w2, int n2, int d2, int w3, int n3, int d3)
+        {
+            Fraction f1 = new Fraction(w1, n1, d1);
+            Fraction f2 = new Fraction(w2, n2, d2);
+            Fraction actual = f1 * f2;
+            Fraction expected = new Fraction(w3, n3, d3);
+            //int actual = Fraction.GCD(f3.Numerator, f3.Denominator);
+
+            Assert.Equal(expected, actual);
+
+        }
+
+        [Theory]
+        //[InlineData(0, 1, 2, 0, 1, 4, 0, 1, 8)]
+        [InlineData(0, 5, 2,  0, 6, 8,  3, 1, 3)]
+        public void Fraction_ReturnCorrectDivisionValue(int w1, int n1, int d1, int w2, int n2, int d2, int w3, int n3, int d3)
         {
             Fraction f1 = new Fraction(w1, n1, d1);
             Fraction f2 = new Fraction(w2, n2, d2);

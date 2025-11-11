@@ -96,16 +96,9 @@ namespace OverloadingOperatorsLib
             // Create new fraction
             Fraction f3 = new Fraction();
 
-            // Multiply both denoms to get and store the common denom
-            // set result denom to common denom
-            f3.Denominator = f1.Denominator * f2.Denominator;
-
-            // Multiply each num by it's opposite denom
-            f1.Numerator *= f2.Denominator;
-            f2.Numerator *= f1.Denominator;
-
-            // Add the new nums to get the result num
+            // multiply the nums and denoms by eachother
             f3.Numerator = f1.Numerator * f2.Numerator;
+            f3.Denominator = f1.Denominator * f2.Denominator;
 
             // simplify result and return
             f3.Simplify();
@@ -124,14 +117,14 @@ namespace OverloadingOperatorsLib
 
             // Multiply both denoms to get and store the common denom
             // set result denom to common denom
-            f3.Denominator = f1.Denominator * f2.Denominator;
+            //f3.Denominator = f1.Denominator * f2.Denominator;
 
             // Multiply each num by it's opposite denom
-            f1.Numerator *= f2.Denominator;
-            f2.Numerator *= f1.Denominator;
+            f3.Numerator = f1.Numerator * f2.Denominator;
+            f3.Denominator = f2.Numerator * f1.Denominator;
 
             // Add the new nums to get the result num
-            f3.Numerator = f1.Numerator / f2.Numerator;
+            //f3.Numerator = f1.Numerator / f2.Numerator;
 
             // simplify result and return
             f3.Simplify();
