@@ -127,7 +127,7 @@ namespace OverloadingOperatorsLibTester
         {
             Fraction f1 = new Fraction(w1, n1, d1);
             Fraction f2 = new Fraction(w2, n2, d2);
-            Fraction actual = f1 * f2;
+            Fraction actual = f1 / f2;
             Fraction expected = new Fraction(w3, n3, d3);
             //int actual = Fraction.GCD(f3.Numerator, f3.Denominator);
 
